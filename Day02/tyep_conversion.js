@@ -17,6 +17,7 @@ console.log(typeof(newage));
 let greet = "hello";
 let greetno = Number(greet);
 console.log(typeof(greetno));
+console.log(greetno); // Nan => not a number 
 
 let res = 0;
 let newres = Boolean(res);
