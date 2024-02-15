@@ -12,7 +12,7 @@
 // console.log(x.getMonth());
 // console.log(x.getMinutes());
 // console.log(x.getSeconds());
-// console.log((x.getDay())); //0-6 where o is sunday
+// console.log((x.getDay())); //0-6 where o is sunday **
 // // /* 0-11 , january is 0 and december is 11
 
 

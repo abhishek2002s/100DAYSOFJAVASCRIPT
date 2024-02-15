@@ -8,7 +8,7 @@ var person = {
 
     // set setname(n){
     //     this.name = n.toUpperCase();
-    // }
+    // } // set the name in the object
 };
 // person.name = "soni";
 

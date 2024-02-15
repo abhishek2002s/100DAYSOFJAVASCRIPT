@@ -1,6 +1,6 @@
 //******* practice time     **********/
 // console.log(Math.PI);
-// console.log(Math.E); // where e is euler number
+// console.log(Math.E); // where e is euler number //
 
 
 const x = 4.7;
