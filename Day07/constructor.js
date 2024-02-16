@@ -5,13 +5,13 @@
 //     class: 5
 // }
 
-// //constructor function
-// function Student(first,last,age,clas){
-//     this.firstName = first;
-//     this.lastName = last;
-//     this.age = age;
-//     this.class = clas;
-// }
+//constructor function
+function Student(first,last,age,clas){
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.class = clas;
+}
 
 // var student1 = new Student("abhishek","soni",25,5);
 // // var student2 = new Student("rahul","soni",25,5);
@@ -23,10 +23,10 @@
 
 
 // // add function in the object ***
-// student1.name = function(){
-//     return this.firstName+ " "+this.lastName;
-// }
-// console.log(student1.name);
+student1.name = function(){
+    return this.firstName+ " "+this.lastName;
+}
+console.log(student1.name);
 
 
 //**** */ add element to the constructor function(prototype method)
