@@ -1,0 +1,1 @@
+Now basic of javascript complete Its time to jump on DOM(Document Object MOdel) and BOM(Browser Object Model);
