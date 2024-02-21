@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 class="intro">Heading 1</h2>
+
+    <div id="div1">
+        <p class="intro">paragraph 1</p>
+        <h2 class="intro">Headign 2</h2>
+        <p>paragraph2</p>
+        <h2>Headign 3</h2>
+        <p class="intro">paragraph3</p>
+    </div>
+
+    <script> 
+
+        //to select particular element
+        // let elem = document.querySelector("p.intro");
+        // elem.innerHTML = "hello";
+
+        //to select all element
+
+        const elem = document.querySelectorAll("p.intro");
+
+        for(i=0;i<elem.length;i++)
+        {
+            elem[i].innerHTML  = "HEllo";
+        }
+
+
+    </script>
+</body>
+</html>

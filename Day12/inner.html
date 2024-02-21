@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>innerHTML is a property</title>
+</head>
+<body>
+    <div id="para">
+        <p>hello this is me i am very happy</p>
+    </div>
+
+    <script>
+        let p = document.getElementById("para");
+        console.log(p); // fetch
+
+        //change
+        p.innerHTML = "<h1>This is a heading</h1>";
+    </script>
+</body>
+</html>

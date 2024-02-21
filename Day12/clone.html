@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="menu">
+        <li>Home</li>
+        <li>Product</li>
+        <li>About us</li>
+        <li>contact</li>
+    </ul>
+
+    <script>
+      let menu = document.getElementById("menu");
+      let clone = menu.cloneNode(true);//with child element //if you wnat only clone parent then true noe pass
+         clone.id = "mobile-menu";
+      document.body.appendChild(clone);
+      console.log(clone);
+    </script>
+</body>
+</html>

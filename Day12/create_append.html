@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>innerHTML is a property</title>
+</head>
+<body>
+    <div id="para">
+        <p id="p1">hello this is me i am very happy</p>
+    </div>
+
+    <script>
+        let p = document.getElementById("para");
+        let h5 = document.createElement('h5');
+
+        // let text = document.createTextNode("this is h1 tag");
+        // or
+        h5.textContent = "new this is me h5";
+        // h1.appendChild(text);
+        p.appendChild(h5);
+
+        //to add an class or an id
+
+        h5.className = "try pi";
+        h5.id = "life"
+
+
+      let body=   document.body;
+      body.appendChild(h5);
+
+    // to change the content of h1 using property
+    // h5.textContent = "Content added";
+
+//fetch the element
+    let pra = document.getElementById('p1');
+    console.log(pra.textContent);
+
+
+    </script>
+</body>
+</html>

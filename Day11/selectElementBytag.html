@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Element by tag</title>
+</head>
+<body>
+    <h2>Head 1</h2>
+    <p>Para 1</p>
+    <h2>Head 2</h2>
+
+    <div id="div1">
+    <p>Para 2</p>
+    <h2>Head 3</h2>
+    <p>Para 3</p>
+    <h2>Head 4</h2>
+    <p>Para 4</p>
+    <h2>Head 5</h2>
+    <p>Para 5</p>
+</div>
+    <script>
+        const div1 = document.getElementById("div1");
+const tagName = div1.getElementsByTagName("h2");
+
+for(let i=0;i<tagName.length;i++)
+{
+    tagName[i].innerHTML = "hello";
+}
+    </script>
+</body>
+</html>

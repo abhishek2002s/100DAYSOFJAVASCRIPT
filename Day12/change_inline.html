@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>change inline element</title>
+</head>
+<body>
+    <button id="btn" style="color: red;">Click me</button>
+
+    <script>
+        let btn = document.getElementById("btn");
+        btn.style.cssText += "background-color : cyan; color:white;";
+        // btn.style.background = "cyan";
+        // btn.style.color = "white"
+        btn.style.border = "4px solid cyan";
+        btn.style.padding = "2vw 3vw";
+        btn.style.position = "absolute";
+        btn.style.top = "45%";
+        btn.style.right = "45%";
+        btn.style.borderRadius =  "30px";
+    </script>
+</body>
+</html>

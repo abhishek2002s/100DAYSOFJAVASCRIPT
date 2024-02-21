@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Traversing</h2>
+
+<ul>
+    <li id="nitro">1</li>
+    <li id="prev">2</li>
+    <li>3</li>
+    <li>4</li>
+</ul>
+<ul id="intro">
+    <li>A</li>
+    <li>B</li>
+    <li>C</li>
+    <li>D</li>
+</ul>
+
+<script>
+    let elem = document.getElementById("nitro");
+    let prnt = elem.parentElement;
+    console.log(prnt);
+
+
+
+    let elem0 = document.getElementById("intro");
+     let prnt0 = elem0.firstElementChild;
+     console.log(prnt0) //to select first child
+
+     let prnt1 = elem0.lastElementChild; // to slect last child
+console.log(prnt1);
+
+     let prnt2 = elem0.children; // to select all the element
+      console.log(prnt2);
+    //   for(let i= 0;i<prnt2.length;i++)
+    //   {
+    //     prnt2[i].innerHTML = "hello";
+    //   }
+
+
+
+    let previ = document.getElementById("prev");
+   let  prv1 = previ.previousElementSibling; //to select previous sibling
+   console.log(prv1);
+
+   let prv2 = previ.nextElementSibling; // to select next element by that element
+   console.log(prv2);
+</script>
+</body>
+</html>
