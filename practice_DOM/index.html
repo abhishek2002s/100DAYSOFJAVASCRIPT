@@ -4,11 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM practice</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <div class="bg-black">
-        <h1 class="heading">DOM kearining on chai or code</h1>
+        <h1 id="tittle" class="heading">DOM learning on chai or code<span id="sp">test text</span></h1>
+        <h2 class="head">text1</h2>
+        <h2 class="head">text2</h2>
+        <h2 class="head">text3</h2>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
     </div>
-</body>
+
+
+    <ul>
+        <li class="listItem">List1</li>
+        <li class="listItem">lis2</li>
+        <li class="listItem">list3</li>
+        <li class="listItem">list4</li>
+    </ul>
+    <script>
+        let elem = document.getElementById("tittle");
+        console.log(elem.className);
+        console.log(elem.getAttribute("class"));
+        console.log(elem.setAttribute("class","test heading"));
+        document.getElementById("sp").style.display ="none";
+        console.log(elem.style.cssText += "background-color : cyan; color:white; border-radius : 20px; padding: 2vw 1vw");
+        // console.log(elem.innerText);
+        // console.log(elem.textContent);
+        // console.log(elem.innerHTML);
+
+        // let parent = document.querySelector("h1");
+        // let parent = document.querySelectorAll("h2");
+        // let parent = document.querySelectorAll("span");
+
+
+    //     let myUl = document.querySelector('ul');
+    //    let colorGreen =  myUl.querySelector('li');
+    //     colorGreen.style.backgroundColor = "green";
+    //     colorGreen.style.padding = "1vw 1vw";
+    //     colorGreen.innerHTML = "hello world";
+    //     let myUl = document.querySelector('ul');
+    //    let lisList =  myUl.querySelectorAll('li');
+
+
+    //    lisList.forEach(function(l){
+    //     l.style.backgroundColor = "green";
+    //    });
+    
+let parent = document.getElementsByClassName('listItem');
+// console.log(parent);
+for(let i=0;i<parent.length;i++)
+{
+    parent[i].style.backgroundColor = "cyan";
+    console.log(parent[i]);
+}
+
+// second approach
+
+let myCovertedArray = Array.from(parent);
+myCovertedArray.forEach(function(item){
+    item.style.color = "black";
+})
+
+let pr = document.getElementsByClassName("head");
+console.log(pr[0].innerHTML);
+    </script>
+    </body>
 </html>
