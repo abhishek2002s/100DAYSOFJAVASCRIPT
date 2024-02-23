@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Computed CSS</title>
+</head>
+<style>
+    #btn{
+        background-color: aqua;
+        color: white;
+    }
+</style>
+<body>
+    <Button id="btn" name="form1" style="color: blue;">Send</Button>
+</body>
+<script>
+let btn = document.getElementById("btn");
+
+let css = getComputedStyle(btn);
+console.log(css.backgroundColor);
+</script>
+</html>

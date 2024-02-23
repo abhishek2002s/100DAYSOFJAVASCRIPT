@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>change CSS classes</title>
+</head>
+<style>
+    .color{
+     background-color: #212121;
+     color: white;
+    }
+    .dim{
+        border: 1px solid red;
+        padding: 100px;
+    }
+</style>
+<body>
+    <Div id="box" class="color">
+        <p>This is a dummy text</p>
+    </Div>
+</body>
+
+<script>
+    // let box = document.getElementById("box");
+    // console.log(box.className);
+    // //first way to add class
+    // box.className += " dim";
+
+    //check attribute class name
+    // console.log(box.classList);
+
+    // for(let css  of box.classList){
+    //     console.log(css);
+    // }
+
+    // //second way to add
+    // box.classList.add("dim");
+
+    // // //to remove class
+    // // box.classList.remove("dim");
+
+
+    // // to replace with another classes
+    // box.classList.replace("color","dim");
+
+    // // to check wehter the className is present or no
+    // let result = box.classList.contains("dim");
+    // console.log(result);
+
+    // box.classList.toggle("color","dim");
+
+
+    //hoe to check the height and width of an elemnet
+let box = document.getElementById("box");
+// let width = box.offsetWidth; // in offSet border hieght width is included
+// let height = box.offsetHeight;
+
+
+//in client rect there are no border width and hieght is included
+let width = box.clientWidth;
+let height = box.clientHeight;
+console.log(width);
+console.log(height);
+
+</script>
+</html>
