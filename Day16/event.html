@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing Photo</h2>
+    <div>
+        <ul id="images">
+            <li> <img src="https://i.pinimg.com/564x/11/bb/3c/11bb3cca0c201bdde17d8e281f4c0df1.jpg" alt="nature" width="200px" height="200px" id="nature"></li>
+            <li> <img src="https://i.pinimg.com/564x/4e/21/58/4e2158da3d1c7698a245c5b827b8e6f4.jpg" alt="nature4" id="nature4" height="200px" width="200px"></li>
+            <li> <img src="https://i.pinimg.com/564x/00/a0/2a/00a02ae2be9992b08d75d2f1f66fa4fb.jpg"  height="200px" width="200px" id="kakashi"></li>
+            <li> <img src="https://i.pinimg.com/736x/3e/34/50/3e3450a04b84781ac9945cefa3d55210.jpg" alt="nature2" width="200px" id="nature2" height="200px" ></li>
+            <li> <img src="https://i.pinimg.com/564x/00/a0/2a/00a02ae2be9992b08d75d2f1f66fa4fb.jpg" alt="nature" width="200px" id="nature" height="200px"></li>
+            <li><a href="https://google.com" id="google" style="color: aliceblue;">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+//  let res =  document.querySelector("#kakashi");
+//  res.addEventListener(onclick,function(event){
+//    event.alert("Hey there iam kakashi hatokkahye")
+//  })
+
+// document.getElementById("kakashi").onclick = function()
+// {
+//     alert("on clciked");
+
+// }
+
+
+document.getElementById("kakashi").addEventListener('click',function(event){
+alert("I am kakashi");
+},false)
+</script>
+</html>
