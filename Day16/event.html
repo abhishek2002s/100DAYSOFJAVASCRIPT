@@ -19,20 +19,65 @@
     </div>
 </body>
 <script>
-//  let res =  document.querySelector("#kakashi");
-//  res.addEventListener(onclick,function(event){
-//    event.alert("Hey there iam kakashi hatokkahye")
-//  })
 
-// document.getElementById("kakashi").onclick = function()
-// {
-//     alert("on clciked");
-
+//old Approach
+// document.querySelector('#kakashi').onclick = function(){
+//     alert("I am kakashi hatake");
 // }
 
+//approach 2
+// document.querySelector("#kakashi").addEventListener('click',function(event){
+//             alert("I am kakashi hatke sensie of naruto");
+// },false)
 
-document.getElementById("kakashi").addEventListener('click',function(event){
-alert("I am kakashi");
+//approach 3
+//attachEvent
+//jQuery - on 
+
+//event Object
+
+//type , timestamp , defaultPrevented, 
+//target, toElement, srcElement, currentTarget
+//clientX,clientY, screenX, screenY
+//altKey, ctrlKey,shiftKey, keyCode
+
+
+//event proporpagtion  -> 1.bubbling  2.capturing
+// document.querySelector("#images").addEventListener('click',function(event){
+//          console.log("clicked inside the Ul");   
+// },false)
+
+// document.querySelector("#kakashi").addEventListener('click',function(event){
+//          console.log("i am kakashi hatake");
+//          event.stopPropagation();   
+// },false)
+
+// document.getElementById('google').addEventListener('click',function(event){
+//     event.preventDefault();
+//     event.stopPropagation();
+// console.log("google click");
+// },false)
+
+
+//real world scenario:::
+
+//when clicked in images it should be remove::
+
+document.querySelector('#images').addEventListener('click',function(event){
+    // console.log(event.target.parentNode);
+    // let removeIt = event.target.parentNode
+
+
+    console.log(event.target.tagName);
+    if(event.target.tagName === 'IMG'){
+        console.log(event.target.id);
+        let removeIt = event.target.parentNode;
+        removeIt.remove();
+    }
+
+    // removeIt.remove();
 },false)
+
+// removeIt.parentNode.removeChild(removeIt);
 </script>
 </html>

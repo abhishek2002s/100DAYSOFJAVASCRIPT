@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events In HTML</title>
+</head>
+<body>
+    <button id="btn">Click Me</button>
+
+    <!-- //inline event -->
+    <!-- <button id="btn" onclick="btnClick()">Click Me</button> -->
+</body>
+
+<script>
+
+//inline function
+// function btnClick(){
+//     alert("Button was clicked");
+// }
+
+//secodn ways
+
+// let btn1 = document.querySelector("#btn");
+// btn1.addEventListener('click',btnClick);
+
+//third ways (anonymous function)
+// let btn1 = document.querySelector("#btn");
+// // btn1.addEventListener('click',function(){
+// //     alert("buttom was clicked");
+// // })
+
+
+//multiple event occur in one time
+let btn1 = document.querySelector("#btn");
+btn1.addEventListener('click',function(){
+    console.log("buttom was clicked");
+})
+btn1.addEventListener("mouseover",function(){
+    console.log("Mouse over is activated");
+});
+
+btn1.addEventListener("mouseout",function(){
+    console.log("Mouse out is activated");
+});
+</script>
+</html>
