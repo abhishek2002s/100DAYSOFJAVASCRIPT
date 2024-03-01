@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Load In HTML</title>
+</head>
+<body>
+    <!-- when page load in the javascript : first DOM content mode load on the JS engine(it  load only DOM object not an external object like img)  2. load is used to load external source on the js engine-->
+
+    <img id= "img1" src="https://i.pinimg.com/564x/11/bb/3c/11bb3cca0c201bdde17d8e281f4c0df1.jpg" alt="nature" width="200px" height="200px" id="nature">
+</body>
+
+<script>
+    window.addEventListener('DOMContentLoaded',function(){
+        console.log("DOm tree created");
+    });
+
+    let img  =  document.getElementById("img1")
+    img.addEventListener('load',function(){
+        console.log("Fully Loaded");
+    });
+
+
+</script>
+</html>

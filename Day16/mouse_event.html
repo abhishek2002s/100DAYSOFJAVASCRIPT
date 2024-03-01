@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Event in js</title>
+</head>
+
+<style>
+    #box{
+        height: 100px;
+        width: 100px;
+        background-color: blueviolet;
+    }
+</style>
+<body>
+    <div id="box">
+
+    </div>
+</body>
+<script>
+    //clcik event
+    // document.querySelector("#box").addEventListener('click',function(){
+    //     alert("Clicked Event");
+    // })
+
+    //onTextMenu
+    // document.querySelector("#box").addEventListener("contextmenu",function(){
+    //     alert("right click is cliked");
+    // });
+
+    //dbclick Event
+    // document.querySelector("#box").addEventListener("dblclick",function(){
+    //     alert("double click is cliked");
+    // });
+
+    //mousedown
+    // document.querySelector("#box").addEventListener("mousedown",function(){
+    //     alert("mouse down" is click is cliked");
+    // });
+
+    //mouseup
+    document.querySelector("#box").addEventListener("mouseup",function(){
+        alert("mouseUp is click is cliked");
+    });
+
+    //mouseover
+    document.querySelector("#box").addEventListener("mouseover",function(){
+        alert("mouseOver is click is cliked");
+    });
+</script>
+</html>

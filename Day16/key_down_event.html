@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key down Event</title>
+</head>
+<style>
+    #box{
+        height: 100px;
+        width: 100px;
+        background-color: blueviolet;
+    }
+</style>
+<body>
+   <div id="box">
+
+   </div> 
+</body>
+
+<script>
+
+    //It is used to determine to indentify the key press
+window.addEventListener('keydown',checkKey);
+
+function checkKey(event){
+    console.log(event.key);
+}
+</script>
+</html>

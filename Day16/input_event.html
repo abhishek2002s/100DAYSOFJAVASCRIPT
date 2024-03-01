@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form event</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="myinput">
+    </form>
+</body>
+
+<script>
+    let x = document.getElementById("myinput");
+    x.addEventListener('focus',myFocusFunction);
+    x.addEventListener('blur',myBlurFunction);
+    
+    
+    function myFocusFunction(){
+        x.style.background = "yellow";
+    }
+    function myBlurFunction(){
+        x.style.background = "white";
+    }
+    
+    //how to detect change in the inputField
+x.addEventListener('change',function(){
+    console.log(this.value);
+});
+
+//when we give input or remove it will be detect
+x.addEventListener('input',function(){
+    console.log(this.value);
+});
+</script>
+</html>
