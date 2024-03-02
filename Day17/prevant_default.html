@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prevent default link click</title>
+</head>
+<body>
+    <!-- <a href="https://www.google.com" id="anchor">Click Me</a> -->
+
+    <form action="" id="myform">
+        <input type="text">
+        <input type="submit">
+    </form>
+</body>
+
+<script>
+// let link = document.getElementById("anchor");
+// link.addEventListener('click',function(event){
+//     console.log("link click...."); 
+//     //prevent default action to be prevent
+//     event.preventDefault();
+// })
+
+
+let form = document.getElementById("myform");
+form.addEventListener('submit',function(event){
+    event.preventDefault();
+});
+</script>
+</html>

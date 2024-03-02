@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubbling event and capturing event</title>
+</head>
+<style>
+    body{
+        padding: 100px;
+        background-color: cornsilk;
+    }
+
+    #mydiv{
+        padding: 50px;
+        background-color: aqua;
+    }
+</style>
+<body>
+    <div id="mydiv">
+        <button id="btn">Click me</button>
+    </div>
+</body>
+<script>
+    let d = document.getElementById("mydiv");
+    let b = document.getElementById("btn");
+
+    //bubbling event **************
+//     b.addEventListener('click',btnClick) // default valu is false wichich mean bubblling event is happening
+//    d.addEventListener('click',divClick);
+//    document.body.addEventListener('click',bodyClick);
+
+
+//    function btnClick()
+//    {
+//     console.log("btn click");
+//    }
+//    function divClick()
+//    {
+//     console.log("div click");
+//    }
+//    function bodyClick()
+//    {
+//     console.log("body click");
+//    }
+   
+//capturing event
+
+//to perform capturing event we need to pass third parameter which is true value
+//     b.addEventListener('click',btnClick,true);
+//    d.addEventListener('click',divClick,true);
+//    document.body.addEventListener('click',bodyClick,true);
+
+
+
+//    function btnClick()
+//    {
+//     console.log("btn click");
+//    }
+//    function divClick()
+//    {
+//     console.log("div click");
+//    }
+//    function bodyClick()
+//    {
+//     console.log("body click");
+//    }
+
+
+//stop propogation
+    b.addEventListener('click',btnClick);
+   d.addEventListener('click',divClick);
+   document.body.addEventListener('click',bodyClick);
+
+
+
+   function btnClick(event)
+   {
+       console.log("btn click");
+        event.stopPropagation();
+   }
+   function divClick()
+   {
+    console.log("div click");
+   }
+   function bodyClick(event)
+   {
+    console.log("body click");
+    event.stopPropagation();
+
+   }
+   
+</script>
+</html>
