@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM(Browser object Model)</title>
+</head>
+<body>
+    
+    <h3>All global variables are properties of the window object</h3>
+    <h3>All global function are properties of the window object</h3>
+    <script>
+
+        var x = "hello";
+        console.log(window.x);
+
+        function xyz(){
+            console.log("hii");
+        }
+
+        window.xyz();
+    </script>
+</body>
+</html>

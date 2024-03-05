@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetIntervla and SET TimeOut</title>
+</head>
+<body>
+    <button id="btn">clearInterval </button>
+</body>
+
+<script>
+//  function myMsg(){
+//       alert("Hello iam setTimeOut");
+//     }
+//    let myMessage = setTimeout(myMsg,2000);
+//    clearTimeout(myMessage);
+
+
+   let RpeatMsg = setInterval(fun,4000);
+   function fun(){
+    console.log("please follow me");
+   }
+
+let btn1 = document.getElementById("btn");
+btn1.addEventListener('click',function(){
+    clearInterval(RpeatMsg);
+})
+</script>
+</html>

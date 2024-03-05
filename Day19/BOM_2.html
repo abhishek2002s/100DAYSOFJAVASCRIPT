@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+<button id="btn">Click Me</button>
+<button id="btn2">Facebook</button>
+<button id="btn3">close</button>
+
+
+<script>
+    let win;
+        let btn3 = document.getElementById("btn3");
+        let btn1 = document.getElementById("btn");
+       let btn2 = document.getElementById("btn2");
+        let  url = "https://www.google.com";
+  
+      let features = "height = 500, width=500";
+
+      
+        btn1.addEventListener('click',function(){
+            // window.open(url,name,features);
+        win = window.open(url,'google',features);
+        });
+
+
+
+btn2.addEventListener('click',function(){
+     window.open('https://wwww.yahoo.com','google');
+});
+
+
+btn3.addEventListener('click',function(){
+win.close();
+})
+// console.log(window.innerHeight);
+// console.log(window.innerWidth);
+    </script>
+</body>
+</html>
