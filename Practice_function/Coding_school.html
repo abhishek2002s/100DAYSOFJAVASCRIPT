@@ -94,16 +94,16 @@
 // 12, 3.5, abhi,true ,a , null ,undefine  primitive datatype
 //[], (), {} - reference datatype
 
-var arr = [1,2,3,4,5,6];
-var b = arr;
-b.pop();
-console.log(b);
-console.log(arr);
+// var arr = [1,2,3,4,5,6];
+// var b = arr;
+// b.pop();
+// console.log(b);
+// console.log(arr);
 
-//spread => copy paste operator
-var ar  = [12,13,14,15];
-var vas = [...ar];
-console.log(vas);
+// //spread => copy paste operator
+// var ar  = [12,13,14,15];
+// var vas = [...ar];
+// console.log(vas);
 
 
 //**********condtional**********
@@ -200,11 +200,11 @@ abcd();
 
 //extras we should now
 //paramerters and arguments
-function abcd(val){
-           console.log(val+'12');
-}
+// function abcd(val){
+//            console.log(val+'12');
+// }
 
-abcd(12);
+// abcd(12);
 
 //prep for interview *********
 //1.function statment
@@ -265,17 +265,17 @@ abcd(12);
 //what is array ?
 //array ka matlabjab bhi aapko ek ya ek se jayda value ek saath rakhni ho
 
-var users = ["abhi","neha","arisha","krishna"];
-console.log(users[0]);
+// var users = ["abhi","neha","arisha","krishna"];
+// console.log(users[0]);
 
-//how is it work ?
-// var arr = [1,2,4,6,function(){},[],{}];
-// console.log(arr[6]);
-//why 
-//a lot of time the daata is int the shape of more than one member to contain all data altogether, we can save it in the array
+// //how is it work ?
+// // var arr = [1,2,4,6,function(){},[],{}];
+// // console.log(arr[6]);
+// //why 
+// //a lot of time the daata is int the shape of more than one member to contain all data altogether, we can save it in the array
 
-//***********loop with array*****
-var arr  = [1,2,3,5,7];
+// //***********loop with array*****
+// var arr  = [1,2,3,5,7];
 
 // // how to loop an array
 // arr.forEach(function(element){
@@ -284,9 +284,9 @@ var arr  = [1,2,3,5,7];
 
 
 //how to loop an array and do something with each eleent of array
-arr.forEach(function (element) {
-  console.log(element+1);    
-});
+// arr.forEach(function (element) {
+//   console.log(element+1);    
+// });
 
 
 //**************** object ************
@@ -299,22 +299,6 @@ arr.forEach(function (element) {
 
 
 //how to use it::
-var obj = {
-    name : "harsh",
-    age : 25,
-    email: "abhi@gmail.com",
-    contact : 4234324534
-};
-
-var battey = {
-    company : "canono",
-    price : 143213,
-    for : "camera",
-    isWorking : true
-}
-console.log(battey.company);
-console.log(battey.for)
-
 //console is an object
  
 // *********************asynchronus and synchronous javascript ***************
@@ -326,6 +310,70 @@ console.log(battey.for)
 
 
 // ********basic complete **************
+
+//**********this call apply blind **************
+//this keyword js mein oen of the most suspenseful keyword
+//keyword ka matlab hot hai aisa word jiksa koi matlab ho programming lang mein
+
+
+//this is value baar baar badal skti hai alg alg condition me, saari condition ko seekh jaao to this ko samaj jaoge
+
+//*********global - window
+console.log(this);
+
+
+//***********function - window
+
+function abcd(){
+    console.log(this);
+}
+
+abcd();
+//**********method - object
+var obj = {
+    name : function(){
+        console.log(this);
+    },
+    age :25,
+    email : "xyz@gmail.com"
+};
+
+obj.name();
+//************fnc inside method(es5) - window
+var obj2 = {
+    sayName : function(){
+        console.log(this); // object
+        function childfnc(){
+            console.log(this); // window
+        }
+        childfnc();
+    },
+    age:25
+}
+
+obj2.sayName();
+//**********fnc isnide method(es6) - object
+var obj3 = {
+    sayName: function(){
+        const child = () => {
+            console.log(this);
+        }
+    }
+}
+
+obj3.sayName();
+//*********constructor fnc mein this ki value -new blank object
+function add()
+{
+    console.log(this);
+}
+const ans = new add();
+
+
+//******event listener mein this ki value - that elemnt jsi per event lga ho
+document.querySelector("button").addEventListener('click',function(){
+    console.log(this);
+})
 
 
 
