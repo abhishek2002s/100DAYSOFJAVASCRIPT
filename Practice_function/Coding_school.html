@@ -165,15 +165,173 @@ else{
 
 
 
-// function
-// arrays
-// object
+// ***********function**********
+//es5 - function statements, function expressions, anonymous function
+// and es6 - fat arrow function
+//a) basic fat arrow
+// b) fat arrow with one parameter
+// c) fat arrow with implicit return
 
-// basic complete **************
+//function => js mein function normal programming language jaise nahin hai , iska matlab hai, yaha par js mein,function
+//banaane ke type nahin btana padta
+//bas apko function word likhna padega, and aap use koi naam deke bna skte ho 
 
+//indepth = js mein function first class function ka darja diya gya hai ,jsika matlab hai , ki js mein
+//function ko value/variable ki  tarah treat kiya ja skta hai
+
+//structure
+// function abcd(~param){
+ 
+    // }
+//what is a function*** ?
+//koi aisa code jo appko baar baar use krna ho , ya phir aisa code jisko turant nahi chalana per kabhi chlaana ho , use function me daal skte hai
+
+function abcd(){
+    console.log("hello");
+}
+//function call
+abcd();
+
+//why we need?
+//to reuse code and to wrap the code which we want to run in future at some point of time
+
+//how to use
+//function abcd(){your code}
+
+//extras we should now
+//paramerters and arguments
+function abcd(val){
+           console.log(val+'12');
+}
+
+abcd(12);
+
+//prep for interview *********
+//1.function statment
+// function abcd(){
+//     //function statment
+// }
+// //2. function expression
+// var abcd = function (){
+//     //function expression
+// };
+
+// //3. Anonymous function
+// function(){
+//     //function anonymous
+// };
+
+// //4 fat arrow
+// var a = () => {};
+
+// //i) fat arrow with one paramtere
+
+// var g = ab => {}
+
+// g(12);
+
+//ii) implicit return
+// var abcd = () => "harsh";
+// var ans = abcd();
+// console.log()
+
+
+//********return ***********
+//retrun ka matlab hua , jaha par bhi return lagega 
+//uske aage jo bhi likhoge wo jayega jaha par fucntion call hua th
+//,return function ke andar lgta hia
+
+
+//asia function jo kuch bhi return nhi krta wo undefined krta hai
+// function abcd(){
+//     return  12;
+// }
+
+// var ans = abcd();
+// console.log(ans);
+
+//Undefined is a value = > ye value tab di jati jab varibale ko koi value na mili ho iska matalb hai yh garbage value ki treat ki jaati hai, app se defalut value bhi kh kskte ho
+// not define is an error =>koi particular element/identiy ko use kran without its delcaration  gives an erroe ,and that error is not defined error
+
+//null is also a value => this is a vlaue which resolve like ,not found null is received  when something is not found 
+
+
+
+
+
+// ****************arrays*******************
+//arrays
+
+//what is array ?
+//array ka matlabjab bhi aapko ek ya ek se jayda value ek saath rakhni ho
+
+var users = ["abhi","neha","arisha","krishna"];
+console.log(users[0]);
+
+//how is it work ?
+// var arr = [1,2,4,6,function(){},[],{}];
+// console.log(arr[6]);
+//why 
+//a lot of time the daata is int the shape of more than one member to contain all data altogether, we can save it in the array
+
+//***********loop with array*****
+var arr  = [1,2,3,5,7];
+
+// // how to loop an array
+// arr.forEach(function(element){
+//     console.log(element);
+// });
+
+
+//how to loop an array and do something with each eleent of array
+arr.forEach(function (element) {
+  console.log(element+1);    
+});
+
+
+//**************** object ************
+//what is object?
+// object ek treeka hai jisse ki hum ek identity ki details ko ek saath rkh skte hai
+
+//how to create a object
+// var  obj = {};
+// var obj2 = new Object();
+
+
+//how to use it::
+var obj = {
+    name : "harsh",
+    age : 25,
+    email: "abhi@gmail.com",
+    contact : 4234324534
+};
+
+var battey = {
+    company : "canono",
+    price : 143213,
+    for : "camera",
+    isWorking : true
+}
+console.log(battey.company);
+console.log(battey.for)
+
+//console is an object
+ 
+// *********************asynchronus and synchronous javascript ***************
+
+//synchronous code mein code hamesha line by line chalta hai
+
+//aysnchronous code line by line nahi chlta hai ,saara async code ek saath suru kr diya jata hai and jo phle complete hojaaye uska answer dediya jaata hai.
+
+
+
+// ********basic complete **************
+
+
+
+//synchronous asynchronous js
 // prototype
 // protype inheritance
-// asynchronus
 // es6 climax
 // question
 //miscellanoeus ternary and switch case
