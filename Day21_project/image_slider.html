@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+
+    <style>
+        body{
+            margin: 0;
+        }
+
+        .slide-container{
+            position: relative;
+            width: 100%;
+        }
+        .silde{
+            display: none;
+        }
+
+        .silde img{
+            width: 100%;
+        }
+
+        .arrow{
+            cursor: pointer;
+            position: absolute;
+            top: 15%;
+            color: black;
+            padding: 8px 18px;
+            border-radius: 50%;
+            font-size: 25px;
+            font-weight: bold;
+            background-color: rgba(255, 255, 255, 0.818);
+        }
+
+        .next{
+            right: 10px;
+        }
+        .prev{
+            left: 10px;
+        }
+ .caption
+ {
+    padding: 15px 0px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    bottom: 0px;
+ }
+
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="silde">
+            <img style="object-fit: cover;" src="https://i.pinimg.com/564x/70/eb/f8/70ebf8dd585336fdc0d485e3c7289194.jpg " alt="" height="300px" width="100%">
+            <div class="caption">
+                Caption Text 1
+            </div>
+        </div>
+        <div class="silde">
+            <img style="object-fit: cover;" src="https://i.pinimg.com/564x/bd/8b/49/bd8b49fd1c6d5214c3afe4b981fc1f8b.jpg " alt="" height="300px" width="100%">
+            <div class="caption">
+                Caption Text 2
+            </div>
+        </div>
+        <div class="silde">
+            <img style="object-fit: cover;" src="https://i.pinimg.com/564x/e8/15/f0/e815f0eafe1a2047c332b71da688611f.jpg" alt="" height="300px" width="100%">
+            <div class="caption">
+                Caption Text 3
+            </div>
+        </div>
+        <div class="silde">
+            <img style="object-fit: cover;" src="https://i.pinimg.com/564x/2b/a5/32/2ba5325c6b6f14240eb3c31f6f07a4c7.jpg" alt="" height="300px" width="100%">
+            <div class="caption">
+                Caption Text 4
+            </div>
+        </div>
+    
+        <span class="arrow prev" onclick="controller(-1)">&#10094;</span>
+        <span class="arrow next " onclick="controller(+1)">&#10095;</span>
+    </div>
+
+    <script>
+
+let num =0;
+let flag =0;
+slideShow(num);
+
+function controller(x){
+    flag= flag+x;
+    slideShow(flag);
+
+}
+
+
+//intiliase a function to perform th task of slide of image
+function slideShow(num){
+    let slides = document.getElementsByClassName("silde");
+
+
+    //check violate condition
+    let len = slides.length;
+
+    if(num >= len){
+        num =0;
+        flag =0;
+    }
+
+    else if(num<0){
+        num = len-1;
+        flag = len-1;
+    }
+
+    for(let y of slides){
+        y.style.display = "none";
+    }
+    slides[num].style.display = "block";
+}
+
+
+    </script>
+</body>
+</html>
