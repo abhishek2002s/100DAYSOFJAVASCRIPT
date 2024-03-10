@@ -8,7 +8,10 @@
 <body>
     
     
-    
+    <div id="parent">
+        <button id="play">Play</button>
+        <button id="pause">Pause</button>
+    </div>
     
     <script>
 //   **********js the lanugague ************
@@ -312,77 +315,254 @@ abcd();
 // ********basic complete **************
 
 //**********this call apply blind **************
-//this keyword js mein oen of the most suspenseful keyword
+//this keyword js mein one of the most suspenseful keyword
 //keyword ka matlab hot hai aisa word jiksa koi matlab ho programming lang mein
 
 
 //this is value baar baar badal skti hai alg alg condition me, saari condition ko seekh jaao to this ko samaj jaoge
 
 //*********global - window
-console.log(this);
+// console.log(this);
 
 
 //***********function - window
 
-function abcd(){
-    console.log(this);
-}
+// function abcd(){
+//     console.log(this);
+// }
 
-abcd();
-//**********method - object
-var obj = {
-    name : function(){
-        console.log(this);
-    },
-    age :25,
-    email : "xyz@gmail.com"
-};
+// abcd();
+// //**********method - object
+// var obj = {
+//     name : function(){
+//         console.log(this);
+//     },
+//     age :25,
+//     email : "xyz@gmail.com"
+// };
 
-obj.name();
-//************fnc inside method(es5) - window
-var obj2 = {
-    sayName : function(){
-        console.log(this); // object
-        function childfnc(){
-            console.log(this); // window
-        }
-        childfnc();
-    },
-    age:25
-}
+// obj.name();
+// //************fnc inside method(es5) - window
+// var obj2 = {
+//     sayName : function(){
+//         console.log(this); // object
+//         function childfnc(){
+//             console.log(this); // window
+//         }
+//         childfnc();
+//     },
+//     age:25
+// }
 
-obj2.sayName();
+// obj2.sayName();
 //**********fnc isnide method(es6) - object
-var obj3 = {
-    sayName: function(){
-        const child = () => {
-            console.log(this);
-        }
-    }
-}
+// var obj3 = {
+//     sayName: function(){
+//         const child = () => {
+//             console.log(this);//object
+//         }
+//     }
+// }
 
-obj3.sayName();
+// obj3.sayName();
 //*********constructor fnc mein this ki value -new blank object
-function add()
-{
-    console.log(this);
-}
-const ans = new add();
+// function add()
+// {
+//     console.log(this);
+// }
+// const ans = new add();
 
 
 //******event listener mein this ki value - that elemnt jsi per event lga ho
-document.querySelector("button").addEventListener('click',function(){
-    console.log(this);
+// document.querySelector("button").addEventListener('click',function(){
+//     console.log(this);
+// })
+
+//********call apply and bind ***************
+//yh teen tareeke hai function ko call karne ke kisi object ko this maan kar 
+
+// const obj = {name : "harhs"};
+
+// function abcd(){
+//     console.log(this); // call 
+//     // console.log(this,a,b,c);
+// }
+
+//call************
+// abcd.call(obj); // this -> object
+// abcd.call(); //this -> window
+// abcd.call(12); // this -> number
+
+
+//apply*******
+// abcd.apply(this, array)
+// abcd.apply(obj,[1,2,3]);
+
+//bind*********
+// let baadmechalanekeliyefunction = abcd.bind(obj);
+// baadmechalanekeliyefunction(); // name:"harsh"
+
+//********** prototypel and inheritance **************
+//hum object create karte hai and kisi ek parent construcutor function ke prototype meinn kuch add kr dete hai and jab bhi add hota hai toh wo parent se banne wale sabhi children instances ko wo properties jo parent ko protoype se properties de gyyi hai saugaat mein.
+
+
+//ek function jo ki this ka upyog kar rha ho and new ke dwaara naye naye objects bana kar dete ho aise function ko constructor function kahte hai
+
+
+
+// function makeHuman(name ,age){
+//     this.name = name;
+//     this.age = age;
+// }
+
+// const human1 = new makeHuman("abhishek",22);
+// console.log(human1);
+// const human2 = new makeHuman("rahul",56);
+// console.log(human2);
+
+
+//**********prototypel inheritance**********
+// function makeHuman(name,age){
+//     this.name = name;
+//     this.age = age;
+// }
+
+// makeHuman.prototype.chaha =12;
+// makeHuman.prototype.sayHello = function(){
+//     console.log(this.name);
+// }
+
+// const human1 = new makeHuman("rahul",23);
+// const human2 = new makeHuman("abhishek",45);
+
+//aisa ko bhi function jisme aap this ka upyog kr rhe ho aur us function ko call krte waqt app new ka upyog karein ,to new ka matlab waha per ek blank object hojata hai
+
+
+//***************closure********************
+//aisa ko bhi function jo ek aur function ko return kr de, or use kre parent function ka koi varible  usey closure khte hai
+
+//any function which return another function using some value of parent fucntion is called closure function
+
+
+function counter(){
+    var count = 0;
+    return function(){
+        count++;
+        console.log(count);
+    }
+}
+
+var func = counter();
+func();
+
+//ex:2
+function abcd(){
+    var a = 12;
+    return function(){
+        console.log(a);
+    }
+}
+
+var ans= abcd();
+ans();
+
+
+function hello()
+{
+    var greet = "hello";
+    return function(){
+        console.log(greet + " world");
+    }
+}
+
+var hel = hello();
+hel();
+
+
+//*************** event delegation ****************
+//jab aap event lisetenr se kai sare different elements  ke events ko handle kar sake
+
+// //event listener ko parent par lagao and unko id ,class ya fir tag ke basis par differentiate karke different task karao
+
+// var parent   = document.querySelector("#parent");
+
+// parent.addEventListener("click",function(event){
+//     if(event.target.id === "play"){
+//         console.log("paly song");
+//     }
+//     else if(event.target.id === "pause"){
+//         console.log("pasue song")
+//     }
+// })
+
+
+// //*******************higher order function***************
+
+// //aisa koi function jo ki ek func ko parameter mein accept karle and/or ek function ko  return krle
+
+// //way1
+// function abcd(){
+
+// }
+// abcd(function(){});
+
+// //way 2
+// function xyz(){
+//     return function(){
+
+//     }
+// }
+
+
+// var arr = [1,2,3,4,5];
+// arr.forEach(function(){});
+
+//***********erroe handling like pro = try and catch **********************
+
+function divide(a,b){
+    try{
+        if(b==0){
+          throw Error("koi gadbad hui");
+        }
+        console.log(a/b);
+    }
+    catch(err){
+        console.error(err);
+    }
+}
+
+divide(12,0);
+
+//custom events ::::::::::::::::
+//how 
+//make event
+//atach event to some dom element
+//dispatch that event from that dom elem in which you attached the event 
+
+
+const event = new Event("chacha");
+
+document.querySelector("button").addEventListener("chacha",function(){
+    alert("cahahca event hua");
 })
 
+document.querySelector("button").dispatchEvent(event);
 
 
-//synchronous asynchronous js
-// prototype
+//why
+
+
+
+
+
 // protype inheritance
 // es6 climax
 // question
 //miscellanoeus ternary and switch case
+
+
+
+
 
 </script>
 </body>
