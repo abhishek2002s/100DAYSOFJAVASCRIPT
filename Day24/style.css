@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#wrapper{
+    background-color: #212121;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main-heading{
+    color: white;
+    font-size: 35px;
+    text-transform: uppercase;
+    padding: 2vw 0;
+}
+
+.container1{
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid black;
+   text-align: center;
+   padding: 1vw 3vw;
+   background-color: black;
+   display: flex;
+   gap:30px
+}
+
+#icon{
+        cursor:pointer;
+
+}
+
+.container1 input{
+    height: 25px;
+}
