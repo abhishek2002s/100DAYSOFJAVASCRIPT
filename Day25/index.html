@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lets learn about synchronous</title>
+</head>
+<body>
+    
+</body>
+<script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+<script>
+
+    
+    //Lets learn about promises and closure in javascript
+    
+    //**************  ASYNC JS ***********
+
+    //Async code = aisa koi bhi code jisme kuch time lagta hai, js mein use by default in most cases async code maan kar side stack mein daal diya jaat jai..
+
+    //example of asynchronous code****
+
+    //settimeout - settimeout ka code kuch der baad chlta hai
+
+//     console.log("hey1");
+//     console.log("hey2");
+//     setTimeout(function(){
+//         console.log("hey3");
+//     },3000);
+//  console.log("hay4");
+
+
+
+
+
+    //setinterval - setinterval ka code kuch der baad chalta hai baar baar ek particular interval time mein
+
+//     var count =1;
+//    const humareInterval =  setInterval(() => {
+//     count++;
+//         console.log(count);
+//         if(count===3){
+//             clearInterval(humareInterval);
+//         }
+//     },2000);
+
+    // clearInterval(humareInterval); // yh setInterval ko rok dega
+
+
+    //fetch API - ye kisi aur url par jaa kar kuch data laayega ye data humare paas se us url par lekar jaayega
+
+    //kyyuuki ye internet per jaaayega aur fir data ko lekar aayega to ismein time lagta hai to by default hi js mein fetch ko async banaaya  gay hai kyuki fetch ka kaam hai data lana wo bhi kisi url se ab asisa ho skta hai us url ki website slow ho , to data laane mein time lagta lage aur agar   fetch synchronous hot ato uske baad ka code tab tak nahin chalta jab tak uska data nahin aajata, which is a big problem, poora code atak ssakta tha..
+
+    // fetch(`leetr lane wala url`)
+    //.then tab chalnega jba data aa jayega
+
+
+
+    // fetch(`https://randomuser.me/api/`)
+    // .then(raw => raw.json())
+    // .then(redable => console.log(redable));
+
+
+    //Axios (or other HTTP libraries) - ye bhi whi karega jo fetch karta hai bas ye thoda developer freindly hai
+
+    //axios me .then ek baar likhna padta hai
+
+// axios.get(`https://randomuser.me/api/`)
+// .then(result => console.log(result));
+
+
+
+    //promises- yh bahi ke andar jo code likhoge wo apana karega our ye khud side stack mein chale jaayenge us code ko lekar aur jab andar se code resolve kiya jaaeyega tab ye chalega.
+
+    //promises ky hai?
+
+    //aman raghav ke pass  gaya aur bola ki khaane lene bhejdo kisi ko , raghav ne kisi ko bhej diya and aman ko bola ye parchi lelo jab bhi wo banda aajayeg to parchi per pata chal jayega
+
+    //kuch code socho man mein socho, jo ki async code ho , matlab ki ye side stack mein jaayege aur baad mei chalega main stack ke, ab ye socho ki aapne is code ko likha hai iska answer kabhi aayega asia bhi ho skta hai iska answer na aaye, promises ky hai aisa samjo ki aaap promisess ke andar koi bhi async code likhdo jo man mein aaye aur promise aapko ek parchi dedeta hai and wo parchi par by default likha hota hai waiting, parchi par do event hota hai mainly ek event ka naam hia then aur ek event ka naaam hai catch , agar aapka data aagya to parchi pe completed likhjayegi waiting ki jagah and then chalega aur agar data mein dikkat aayi to catch chalega and waiting ki ajagah rejected likhjaayega
+
+//    const parchi =  new Promise(function(resolve,reject){
+//   //jake ke user laao and agar wo male ho toh green button nahin to red button
+//   fetch(`https://randomuser.me/api/`)
+//   .then(raw => raw.json())
+//   .then(result => {
+//     if(result.results[0].gender== "male")
+//     resolve();
+//     else reject();
+//    });
+// });
+
+// parchi
+// .then(function(){
+//     console.log("hra button daba");
+// })
+// .catch(function(){
+//     console.log("laal button daba");
+// })
+
+    //ye sabhi use hi tab kiye jaate hai jab aapko kuch aisa karna ho jisse thoda time lagega
+
+
+    //**********callbacks *************
+    //callback kuch khas nahin balki sirf ek function hot hai, bas thoda special jo hai wo ye hai ki ise pass kiya jaat hai as an argument jab particular async code chal jaaye
+
+    //callback function kucch bhi ek function hai jise pass kiya gaya ho kisi aur function mein aur jab wo function chale toh aap us pass kiye gaye callback function ko chala paayega
+
+//     function abcd(a,b){
+//  b();
+//     }
+// abcd(1,function(){ console.log("call back chla")});
+
+//toh use kasie krey
+//callback pahli cheej to ek function hai, aap is function wo sabh likh do jo aapko chalana ho jab answer aajaye, aur ise tab chalao jab aapka async code chal chuka ho 
+
+// function doSomeAsynctask(url,callback){
+//     fetch( `url`)
+//     .then(raw => raw.json())
+//     .then(result => {
+//         callback()
+//     })
+// }
+
+// doSomeAsynctask("some url", function(){
+
+// })
+
+// function getData(url, callback){
+//     fetch(url)
+//     .then(raw => raw.json())
+//     .then(result => {
+//         callback(result);
+//     })
+// };
+
+// getData("https://randomuser.me/api/",function(result){
+//     console.log(result.results[0].gender, result.results[0].email,result.results[0].name.first)
+// });
+
+
+//Async/Await - koi bhi function banaalo and uske andar jo man mein aaye  wo async code likhdo , ab jab aap async likhte ho to baad waali line pahle chal jaati hai kyuki asyn side stack pe hota  hai aur baad wali line agar async ke basis per hui toh to aapka code fail ho jayega , wo isliye kyuki appka code depend karta hai async code  par jo ki  baad mein chalega sync code chalne ke baad.
+
+
+//with async await aap async code bhi aise likh sakte ho jaise ki aap normal synchronous code likh rahe ho
+
+// async function abcd(){
+//  let a = await  fetch(`https://randomuser.me/api/`);
+// a = await a.json();
+//  console.log(a);
+// }
+
+// abcd();
+
+
+//**********Event loop*********
+//event loop  ka kaam hai yh check krta hai ki main stack khali hua ki nhi
+
+//callbacks vs Promises vs Async/Await
+//ek url se data leakar aao and usey console par show kro
+
+//callback ********
+// function dataFetcher(url,callback){
+//     fetch(url)
+//     .then(raw => raw.json())
+//     .then(result => {
+//         callback(result);
+//     })
+// }
+
+// dataFetcher("https://randomuser.me/api/",function(result){
+//  console.log(result);
+// })
+
+//promise*********
+
+// function dataFetcher(url){
+// const parchi = new Promise(function(resolve,reject){
+//     fetch(url)
+//     .then(raw => raw.json())
+//     .then(result => {
+//         resolve(result);
+//     })
+// })
+// return parchi;
+// }
+
+// dataFetcher("https://randomuser.me/api/")
+// .then (function(result){
+//     console.log(result);
+//     })
+
+
+// Aysnc Await ***********
+
+// async function dataFetcher(url){
+//     let data = await fetch(url);
+//     let result = await data.json();
+//     return result;
+// }
+
+
+// async function call(){
+
+//    const res = await dataFetcher("https://randomuser.me/api/")
+//    console.log(res);
+// }
+// call();
+
+
+//**************Generator ***********
+//aap execution ko pause kr skte ho and bol sakte ki  ab agla step kro aur fir aapko agla step jab bhi chiye wo bhi kr skte ho
+
+// function* printNums(){
+//     console.log("started");
+//     yield 1;
+//     console.log("pehl chal chuka");
+//     yield 2;
+//     console.log("dusra chal chulka ");
+//     yield 3;
+// }
+
+// const ans = printNums();
+// console.log(ans.next().value);
+// console.log(ans.next().value);
+// console.log(ans.next().value);
+
+// function* allNums(){
+//     for(let i =1;i<11;i++){
+//         yield i;
+//     }
+// }
+
+// const gen  = allNums();
+// console.log(gen.next().value);
+// console.log(gen.next().value);
+
+
+
+// ***********web workers ************
+
+//usually  humara pura code single thread par chalta hai    par kai baar kuch bade calculations perform karna pad jata hai jiski wajah se aapka main thread busy hojaata hai yaaa fir wo kaafi jaada loaded hojaata hai aur aapke baaki tasks ki performance kam ho jaati hai
+
+//ap apni main js file se data send kr skte ho and aap worker file per data accept kroge and jo perform  krna hai karoge and waha se data waapas main file bhejoge and main file mein waapas accept karoge 
+
+
+var nums = Array.from({length:10000}, (a,b) => b+1);
+
+const worker = new Worker("worker.js");
+worker.postMessage(nums);
+
+worker.onmessage = function(data){
+    console.log(data.data);
+}
+
+
+
+</script>
+</html>
+
