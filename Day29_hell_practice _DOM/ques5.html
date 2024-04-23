@@ -1,0 +1,67 @@
+<!-- Question5 -->
+<!-- Build a countdown timer that starts when a button is clicked and updates the display in real-time. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 14%;
+    }
+    div{
+        padding: 2vw;
+        font-size: 32px;
+    }
+    button{
+        padding: .56vw 2vw;
+        border: 1px solid white;
+        border-radius: 50px;
+        font-weight: bold;
+        margin-bottom: 2vw;
+        font-size: 22px;
+cursor: pointer;
+
+    }
+</style>
+<body>
+    <div class="display">
+   0
+    </div>
+
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+
+<script>
+   var h4 = document.querySelector("div");
+   var start = document.querySelector("#start");
+   var stop = document.querySelector("#stop");
+   var time;
+
+
+   start.addEventListener("click",function(){
+    count = 0
+    time = setInterval(function(){
+          h4.textContent = count;
+          count++;
+    },1000)
+   })
+
+   stop.addEventListener("click",function(){
+    clearInterval(time);
+   })
+
+
+
+
+</script>
+</html>

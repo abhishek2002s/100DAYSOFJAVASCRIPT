@@ -1,0 +1,66 @@
+<!-- Question3   -->
+<!-- 3. Create a form with input fields and a submit button . use js to validate the form and display an error msg if the input is invalid. -->
+
+<!-- jab bhi form ke deals kro yaad rkho ki sumbit hone par forms page ko realod kr dete hai or tumhe khal rkhna hai mki page reload na ho agr page reload ho gya toh js nhi chlagea kyuki agr js chl gya toh page reload ho jayega  -->
+
+<!-- //form ko submit karne ko reload se rokne ke liye  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4></h4>
+    <form action="">
+        <input type="text">
+        <input type="text">
+       
+        <input type="submit">
+        
+    </form>
+</body>
+
+<script>
+    var form = document.querySelector("form");
+    var inp = document.querySelectorAll('input[type = "text"]');
+    var h4 = document.querySelector("h4");
+
+    form.addEventListener("click",function(event){
+  event.preventDefault();
+        
+// inp.forEach(function(elem){
+    // if(elem.value === ''){
+    //     document.querySelector('h4').textContent = "Error (Invliad Entry)";
+    //     document.querySelector('h4').style.color = "red";
+    // }
+    // else{
+    //     document.querySelector('h4').textContent = "";
+    //     h4.style.color = "cyan";
+    // }
+// })
+
+
+//usinf for loop
+
+
+for(elem = 1;elem<inp.length;elem++){
+
+    if(inp[elem].value.trim() === ''){
+        h4.textContent = "Something is Missing (Invlaid Entry)"
+        h4.style.color= "red";
+        break;
+    }
+
+    else{
+        h4.textContent = ""
+        h4.style.color= "black";
+    }
+}
+
+})
+
+</script>
+</html>

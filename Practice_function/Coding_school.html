@@ -381,12 +381,12 @@ abcd();
 //********call apply and bind ***************
 //yh teen tareeke hai function ko call karne ke kisi object ko this maan kar 
 
-// const obj = {name : "harhs"};
+const obj = {name : "harhs"};
 
-// function abcd(){
-//     console.log(this); // call 
-//     // console.log(this,a,b,c);
-// }
+function abcd(){
+    console.log(this); // call 
+    // console.log(this,a,b,c);
+}
 
 //call************
 // abcd.call(obj); // this -> object
@@ -399,8 +399,8 @@ abcd();
 // abcd.apply(obj,[1,2,3]);
 
 //bind*********
-// let baadmechalanekeliyefunction = abcd.bind(obj);
-// baadmechalanekeliyefunction(); // name:"harsh"
+let baadmechalanekeliyefunction = abcd.bind(obj);
+baadmechalanekeliyefunction(); // name:"harsh"
 
 //********** prototypel and inheritance **************
 //hum object create karte hai and kisi ek parent construcutor function ke prototype meinn kuch add kr dete hai and jab bhi add hota hai toh wo parent se banne wale sabhi children instances ko wo properties jo parent ko protoype se properties de gyyi hai saugaat mein.
@@ -444,39 +444,39 @@ abcd();
 //any function which return another function using some value of parent fucntion is called closure function
 
 
-function counter(){
-    var count = 0;
-    return function(){
-        count++;
-        console.log(count);
-    }
-}
+// function counter(){
+//     var count = 0;
+//     return function(){
+//         count++;
+//         console.log(count);
+//     }
+// }
 
-var func = counter();
-func();
+// var func = counter();
+// func();
 
-//ex:2
-function abcd(){
-    var a = 12;
-    return function(){
-        console.log(a);
-    }
-}
+// //ex:2
+// function abcd(){
+//     var a = 12;
+//     return function(){
+//         console.log(a);
+//     }
+// }
 
-var ans= abcd();
-ans();
+// var ans= abcd();
+// ans();
 
 
-function hello()
-{
-    var greet = "hello";
-    return function(){
-        console.log(greet + " world");
-    }
-}
+// function hello()
+// {
+//     var greet = "hello";
+//     return function(){
+//         console.log(greet + " world");
+//     }
+// }
 
-var hel = hello();
-hel();
+// var hel = hello();
+// hel();
 
 
 //*************** event delegation ****************
@@ -519,17 +519,17 @@ hel();
 
 //***********erroe handling like pro = try and catch **********************
 
-function divide(a,b){
-    try{
-        if(b==0){
-          throw Error("koi gadbad hui");
-        }
-        console.log(a/b);
-    }
-    catch(err){
-        console.error(err);
-    }
-}
+// function divide(a,b){
+//     try{
+//         if(b==0){
+//           throw Error("koi gadbad hui");
+//         }
+//         console.log(a/b);
+//     }
+//     catch(err){
+//         console.error(err);
+//     }
+// }
 
 divide(12,0);
 
@@ -540,13 +540,13 @@ divide(12,0);
 //dispatch that event from that dom elem in which you attached the event 
 
 
-const event = new Event("chacha");
+// const event = new Event("chacha");
 
-document.querySelector("button").addEventListener("chacha",function(){
-    alert("cahahca event hua");
-})
+// document.querySelector("button").addEventListener("chacha",function(){
+//     alert("cahahca event hua");
+// })
 
-document.querySelector("button").dispatchEvent(event);
+// document.querySelector("button").dispatchEvent(event);
 
 
 //why

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+    
+//     let userDetail = {
+//     name:"Abhi",
+//     Age:28,
+//     Designation:"learner",
+   
+// };
+
+// printDetails = function(state,country){
+//         console.log(this.name +" "+state+ " "+country);
+//     }
+
+// printDetails.call(userDetail,"delhi","inndia");
+
+
+//     let userDetai2 = {
+//     name:"rahul",
+//     Age:27,
+//     Designation:"learner",
+  
+// };
+// //call
+// printDetails.call(userDetai2,"delhi","india");
+
+// //apply
+// printDetails.apply(userDetai2,["Delhi","india"]);
+
+// //Bind
+// let results = printDetails.bind(userDetai2,"delhi","india");
+// results();
+
+//call apply bind
+
+let car  = {
+    model:"suzuki",
+    made:"India",
+    price:23000
+};
+
+printDertailAboutFeature = function(owner,secowner){
+    console.log(this.model + " "+ this.made
+ + " "+this.price +" " +owner + " "+secowner)
+}
+
+//call
+printDertailAboutFeature.call(car,"abhi");
+
+//apply
+printDertailAboutFeature.apply(car,["abhi","rahul"]);
+
+//bind
+let seller = printDertailAboutFeature.bind(car,["abhi","rahul"],"abhi2");
+seller();
+
+
+function SetUsername(username){
+    //complex DB calls
+    this.username= username;
+    console.log("called")
+}
+
+function createUSer(username,email,Password){
+    SetUsername.call(this,username);
+
+    this.email = email;
+    this.Password =  Password;
+}
+
+const chai  = new createUSer("chai","abhi@gamil.com","124");
+console.log(chai);
+
+
+//Bind **************
+</script>
+</html>

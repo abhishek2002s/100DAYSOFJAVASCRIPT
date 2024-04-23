@@ -1,0 +1,49 @@
+<!-- Question2   -->
+<!-- Create a page with two images and a button . when the bbutton is clicked , swap the source atribute of the iamges -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        img{
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        button{
+            padding:.5vw 2vw;
+            border-radius: 50px;
+            border: none;
+            background-color: #3f3f3f;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <img class="img1" src="https://images.unsplash.com/photo-1713761928558-89209d6a4d26?q=80&w=1443&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+    <img class="img2" src="https://images.unsplash.com/photo-1713682094261-8276e50379c9?q=80&w=1373&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+    <button>Swap Images</button>
+</body>
+
+
+<script>
+    var btn = document.querySelector('button');
+    var oneImg = document.querySelector(".img1");
+    var TwoImg = document.querySelector(".img2");
+    btn.addEventListener("click",function(){
+         var src1 = oneImg.src;
+         var src2 = TwoImg.src;
+
+
+         oneImg.src = src2;
+         TwoImg.src = src1;
+    })
+
+</script>
+</html>
