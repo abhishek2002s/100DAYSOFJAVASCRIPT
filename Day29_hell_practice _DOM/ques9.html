@@ -1,0 +1,40 @@
+<!-- question9 -->
+
+<!-- //Build a character counter for a text area or input field , which updates in real world user type and enforces a charcter limit -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>character Count</title>
+</head>
+
+<style>
+    body{
+        padding: 2vw;
+    }
+
+    textarea{
+        height: 100px;
+        width: 300px;
+        font-size: 20px;
+        font-weight: 500;
+        outline-color: royalblue;
+        resize: none;
+    }
+</style>
+<body>
+    <h3>character Count : <span>0</span></h3>
+    <textarea></textarea>
+</body>
+
+<script>
+    var textarea = document.querySelector("textarea");
+    var text = document.querySelector("span");
+
+    textarea.addEventListener("input",function(){
+               text.textContent = textarea.value.length;
+    })
+</script>
+</html>

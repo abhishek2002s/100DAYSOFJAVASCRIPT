@@ -1,0 +1,126 @@
+<!-- Question 6 -->
+
+<!-- create a tabbed interface where clicking ontabs displays different content sections without page reload. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabbed Interface</title>
+</head>
+
+<style>
+    .tabs{
+        display: flex;
+        gap:20px;
+        padding-top: 2vw;
+    }
+    
+    .tab{
+        border: 2px solid #dadada;
+        padding:.76vw 2vw;
+        background-color: rgb(199, 207, 207);
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 700;
+        cursor: pointer;
+        border-radius: 20px;
+    
+    }
+
+    h3{
+        width: 70%;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: 400;
+        padding: 1vw 0;
+        display: none;
+    }
+</style>
+<body>
+    <div class="tabs">
+        <div id="home" class="tab">Home</div>
+        <div id="about" class="tab">About</div>
+        <div id="contact" class="tab">Contact</div>
+    </div>
+
+    <h3 class="hometext">
+        <b>Home Text</b>  <br>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem sapiente maiores quibusdam nisi eos reprehenderit quia, dignissimos repudiandae, pariatur optio, doloremque placeat nobis cum voluptatem modi magni praesentium deserunt mollitia recusandae atque consequatur voluptatum. Ex voluptatum quos consectetur illum molestiae molestias unde, perspiciatis praesentium delectus in natus amet consequatur fugit animi dolore itaque quibusdam est? Perspiciatis, modi ea molestias neque culpa provident earum id quae corrupti quisquam repudiandae velit vero laboriosam error sunt possimus tenetur iste nam rem quasi voluptatem explicabo. Ducimus distinctio odit quae voluptatem voluptatum soluta sit deleniti laborum, magni officiis? Perspiciatis provident magni voluptates eveniet natus corporis temporibus, sed, molestias sequi modi cupiditate laudantium. Vero adipisci deserunt, fugit tenetur, magnam ipsa illo repudiandae, cum asperiores quasi eaque pariatur earum assumenda? Minus distinctio repudiandae ipsum neque nostrum quis fugit quam accusamus officiis? Nihil deleniti in necessitatibus, quae at eius itaque incidunt magni sapiente repellendus laudantium quas eaque id alias dolor! A eligendi temporibus aliquam sint. Ipsa, eum. Expedita, iure aspernatur quia dolorum cum laborum eligendi commodi cupiditate sit suscipit, obcaecati neque exercitationem vel quam soluta ea beatae inventore veritatis rerum natus nisi deleniti minima possimus repellat. Pariatur illo dicta nesciunt esse molestiae blanditiis delectus natus doloribus minima, sit ut mollitia dolores earum sapiente suscipit quae fugiat officiis odit! Recusandae ea voluptatibus sunt tempore quae consequatur, molestias facilis beatae, veniam, nesciunt ducimus saepe id eveniet ad quos atque est?</h3>
+
+    <h3 class="abouttext">
+        <b>About Text</b>  <br>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa at illo animi doloribus repellat possimus porro consequuntur obcaecati! Id facilis architecto et iusto quod, atque, porro ipsa cupiditate doloremque sapiente ex? Veniam, facere nobis labore unde delectus perferendis possimus adipisci excepturi expedita pariatur eos, amet corrupti inventore consequatur ipsum nihil eligendi dolorem voluptas rerum. Harum non necessitatibus, eos fugit consequatur aliquam maiores amet aspernatur odio ea exercitationem! Sequi consequatur dolore, magni quidem labore, soluta facilis odit ullam expedita possimus, ipsa explicabo voluptas et facere consectetur hic exercitationem quisquam perspiciatis earum commodi accusantium. Eius fuga doloribus accusamus, odio non quod hic explicabo mollitia? Rerum exercitationem cum consequuntur modi nostrum quas fugit vel consequatur culpa! Voluptates, enim officiis, eligendi numquam repellat dolore delectus aspernatur maiores accusamus mollitia expedita dolorum in, placeat nostrum hic. A nemo soluta facilis repellat iure voluptas quam repellendus, impedit officia, dolorum veritatis aspernatur sint nihil suscipit? Nobis praesentium omnis, provident accusamus officiis eum hic ducimus totam minus esse! Nisi vero repellat molestiae autem quaerat odio provident perferendis eos possimus, iste, consectetur laborum beatae ea, hic dicta quod quos molestias accusamus pariatur. Earum quidem repellat odio, neque ratione cumque voluptatibus aspernatur est ipsam voluptatem aliquam repudiandae dolores, iure quibusdam.</h3>
+
+    <h3 class="contacttext">
+        <b>Contact Text</b>  <br>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda in maxime reprehenderit at ducimus eius ullam laudantium hic, ipsum sapiente fugit similique commodi doloribus, quas libero? Adipisci odio placeat deleniti veniam quidem, rerum magnam, molestiae neque, sed fugiat ad. Minus, cum? Blanditiis, magni. Qui distinctio dolorem laboriosam possimus minus similique iure veniam? Error delectus, iure eum at blanditiis esse nobis recusandae repellat. Amet facere distinctio tenetur minima, unde culpa earum commodi! Aperiam est praesentium pariatur sunt, saepe recusandae asperiores tempora quos quidem fuga incidunt quod corporis quasi? Debitis unde reiciendis ipsa aliquam numquam sapiente, eum ut quia. Pariatur veniam eveniet at maiores hic voluptatibus totam quas autem mollitia beatae ut exercitationem ipsum aut incidunt, tenetur voluptas! Porro dolorem non molestiae facere doloremque ad. Distinctio quasi possimus minus quia saepe sequi, ipsam quo sapiente aut recusandae rerum. Minima vitae excepturi, placeat ipsa quidem voluptatem laborum voluptas? Veniam repellat nisi quaerat ipsam alias cumque explicabo, dolores fugiat enim reprehenderit modi quibusdam totam illo ducimus necessitatibus dolorem nam doloremque tempora fuga exercitationem voluptatem nobis laborum nostrum incidunt. Quo fugit consequuntur officia corporis dolore beatae tempora ipsa cumque ab dicta neque suscipit numquam, similique, mollitia itaque commodi in iure et fugiat, quibusdam magnam non nobis ut? Sit, non culpa voluptatem repellendus amet, iure magnam vitae porro dolor tenetur laudantium praesentium ipsa. Aspernatur impedit maiores, recusandae, dicta, id possimus omnis at officiis incidunt perspiciatis suscipit.</h3>
+
+
+</body>
+
+<script>
+
+// var home = document.querySelector("#home");
+// var about = document.querySelector("#about");
+// var contact = document.querySelector("#contact");
+
+// var h3 = document.querySelectorAll("h3");
+
+// var homeText = document.querySelector(".hometext");
+// var aboutText = document.querySelector(".abouttext");
+// var contactText = document.querySelector(".contacttext");
+
+// homeText.style.display = "block";
+//     homeText.style.width = "80%";
+
+// home.addEventListener('click',function(){
+//     allTextErase()
+//     homeText.style.display = "block";
+//     homeText.style.width = "80%";
+
+// })
+
+// about.addEventListener('click',function(){
+//     allTextErase()
+//     aboutText.style.display = "block";
+//     aboutText.style.width = "80%";
+
+// })
+
+// contact.addEventListener('click',function(){
+//     allTextErase()
+//     contactText.style.display = "block";
+//     contactText.style.width = "80%";
+
+// })
+
+// function allTextErase(){
+//     h3.forEach(function(data){
+//         data.style.display = "none";
+//     })
+// }
+
+//effiecient way ::::::::::::
+var div = document.querySelectorAll(".tab");
+var h3 = document.querySelectorAll("h3");
+
+h3[0].style.display = "block";
+h3[0].style.width = "80%";
+
+div.forEach(function(data,index){
+    data.addEventListener("click",function(){
+        allTextErase()
+        h3[index].style.display = "block";
+        h3[index].style.width = "80%";
+
+    })
+})
+
+function allTextErase(){
+    h3.forEach(function(data){
+        data.style.display = "none";
+    })
+}
+
+</script>
+</html>
